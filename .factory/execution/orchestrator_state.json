@@ -1,0 +1,25 @@
+{
+  "version": "20.0",
+  "session_id": "jarvis-v20-test-001",
+  "role": "PRODUCT_OWNER",
+  "current_phase": "PHASE-01",
+  "execution_mode": "pilot",
+  "active_batch": null,
+  "agents": {
+    "active": 0,
+    "completed": 0,
+    "failed": 0,
+    "blocked": 0
+  },
+  "escalations": {
+    "pending": 0,
+    "blocking": false
+  },
+  "statistics": {
+    "tasks_completed": 0,
+    "tasks_blocked": 0,
+    "retries_issued": 0
+  },
+  "paused": false,
+  "last_updated": "2026-01-15T15:40:00Z"
+}
