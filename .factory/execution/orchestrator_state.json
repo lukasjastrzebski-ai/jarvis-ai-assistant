@@ -16,10 +16,11 @@
     "blocking": false
   },
   "statistics": {
-    "tasks_completed": 0,
+    "tasks_completed": 1,
     "tasks_blocked": 0,
     "retries_issued": 0
   },
+  "completed_tasks": ["TASK-001"],
   "paused": false,
-  "last_updated": "2026-01-15T15:40:00Z"
+  "last_updated": "2026-01-15T16:04:00Z"
 }
