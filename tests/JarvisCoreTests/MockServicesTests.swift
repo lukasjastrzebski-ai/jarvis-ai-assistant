@@ -58,8 +58,8 @@ final class MockServicesTests: XCTestCase {
         let accounts = await provider.getAccounts()
 
         XCTAssertEqual(accounts.count, 1)
-        XCTAssertEqual(accounts[0].email, "test@example.com")
-        XCTAssertEqual(accounts[0].displayName, "Test User")
+        XCTAssertEqual(accounts[0].email, "user@jarvis.app")
+        XCTAssertEqual(accounts[0].displayName, "Jarvis User")
         XCTAssertTrue(accounts[0].isConnected)
     }
 
@@ -72,7 +72,7 @@ final class MockServicesTests: XCTestCase {
         }
 
         let emails = await provider.getEmails(for: account.id)
-        XCTAssertEqual(emails.count, 5)
+        XCTAssertEqual(emails.count, 10) // SampleDataGenerator provides 10 emails
     }
 
     func testMockEmailProviderGetUnreadEmails() async {
@@ -84,7 +84,7 @@ final class MockServicesTests: XCTestCase {
         }
 
         let unreadEmails = await provider.getUnreadEmails(for: account.id)
-        XCTAssertEqual(unreadEmails.count, 2)
+        XCTAssertEqual(unreadEmails.count, 4) // SampleDataGenerator provides 4 unread emails
         XCTAssertTrue(unreadEmails.allSatisfy { !$0.isRead })
     }
 
@@ -183,7 +183,7 @@ final class MockServicesTests: XCTestCase {
         let provider = MockCalendarProvider()
         let allEvents = await provider.getAllEvents()
 
-        XCTAssertEqual(allEvents.count, 6) // 3 today + 2 tomorrow + 1 next week
+        XCTAssertEqual(allEvents.count, 10) // 5 today + 2 tomorrow + 3 later this week
         // Verify sorted by start date
         for i in 0..<(allEvents.count - 1) {
             XCTAssertLessThanOrEqual(allEvents[i].startDate, allEvents[i + 1].startDate)
@@ -194,7 +194,7 @@ final class MockServicesTests: XCTestCase {
         let provider = MockCalendarProvider()
         let todaysEvents = await provider.getTodaysEvents()
 
-        XCTAssertEqual(todaysEvents.count, 3)
+        XCTAssertEqual(todaysEvents.count, 5) // SampleDataGenerator provides 5 today's events
         let calendar = Calendar.current
         let today = Date()
         XCTAssertTrue(todaysEvents.allSatisfy { calendar.isDate($0.startDate, inSameDayAs: today) })
@@ -231,7 +231,7 @@ final class MockServicesTests: XCTestCase {
         let provider = MockCalendarProvider()
         let initialCount = await provider.getEvents(for: "work-calendar").count
 
-        await provider.deleteEvent(id: "event-1", calendarId: "work-calendar")
+        await provider.deleteEvent(id: "event-001", calendarId: "work-calendar")
 
         let updatedCount = await provider.getEvents(for: "work-calendar").count
         XCTAssertEqual(updatedCount, initialCount - 1)
