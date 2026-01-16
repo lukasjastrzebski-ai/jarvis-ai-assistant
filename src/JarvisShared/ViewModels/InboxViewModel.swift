@@ -18,6 +18,7 @@ public class InboxViewModel: ObservableObject {
 
     private let itemStorage: any ItemStorageProtocol
     private let userId: UUID
+    private let loadSampleData: Bool
 
     // MARK: - Computed Properties
 
@@ -87,9 +88,10 @@ public class InboxViewModel: ObservableObject {
 
     // MARK: - Initialization
 
-    public init(itemStorage: any ItemStorageProtocol, userId: UUID) {
+    public init(itemStorage: any ItemStorageProtocol, userId: UUID, loadSampleData: Bool = false) {
         self.itemStorage = itemStorage
         self.userId = userId
+        self.loadSampleData = loadSampleData
     }
 
     // MARK: - Actions
@@ -100,6 +102,16 @@ public class InboxViewModel: ObservableObject {
         errorMessage = nil
 
         do {
+            // Load sample data if configured
+            if loadSampleData {
+                let sampleItems = SampleDataGenerator.shared.generateSampleItems(userId: userId)
+                for item in sampleItems {
+                    var inboxItem = item
+                    inboxItem.status = .inbox
+                    try await itemStorage.save(inboxItem)
+                }
+            }
+
             let fetched = try await itemStorage.fetch(byUserId: userId)
             items = fetched
             showZeroInboxState = isInboxEmpty

@@ -18,13 +18,14 @@ public struct InboxView: View {
         ))
     }
 
-    /// Initialize with default in-memory storage (for previews)
+    /// Initialize with default in-memory storage (sample data loaded on appear)
     public init() {
         let storage = InMemoryItemStorage()
         let userId = UUID()
         _viewModel = StateObject(wrappedValue: InboxViewModel(
             itemStorage: storage,
-            userId: userId
+            userId: userId,
+            loadSampleData: true
         ))
     }
 
