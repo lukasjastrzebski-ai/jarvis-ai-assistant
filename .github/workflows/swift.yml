@@ -66,14 +66,20 @@ jobs:
             -project Jarvis.xcodeproj \
             -scheme Jarvis-iOS \
             -destination 'platform=iOS Simulator,name=iPhone 15' \
-            -configuration Debug
+            -configuration Debug \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
 
       - name: Build macOS app
         run: |
           xcodebuild build \
             -project Jarvis.xcodeproj \
             -scheme Jarvis-macOS \
-            -configuration Debug
+            -configuration Debug \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
 
   test-apps:
     name: Test iOS & macOS Apps
@@ -96,7 +102,10 @@ jobs:
           xcodebuild test \
             -project Jarvis.xcodeproj \
             -scheme Jarvis-macOS \
-            -configuration Debug
+            -configuration Debug \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
 
       - name: Test iOS app
         run: |
@@ -104,4 +113,7 @@ jobs:
             -project Jarvis.xcodeproj \
             -scheme Jarvis-iOS \
             -destination 'platform=iOS Simulator,name=iPhone 15' \
-            -configuration Debug
+            -configuration Debug \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
