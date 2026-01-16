@@ -38,6 +38,14 @@ build/
 .env
 .env.local
 .env.*.local
+backend/.env
+
+# iOS Secrets and Config (use .example files as templates)
+Config.xcconfig
+src/JarvisCore/Config/Secrets.swift
+
+# Apple auth keys
+AuthKey_*.p8
 
 # Test coverage
 coverage/

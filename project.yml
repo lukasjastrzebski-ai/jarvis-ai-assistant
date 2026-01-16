@@ -58,6 +58,10 @@ targets:
       - path: tests/iOS
     dependencies:
       - target: Jarvis-iOS
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.jarvis.ios.tests
 
   Jarvis-macOSTests:
     type: bundle.unit-test
@@ -66,6 +70,10 @@ targets:
       - path: tests/macOS
     dependencies:
       - target: Jarvis-macOS
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.jarvis.macos.tests
 
 schemes:
   Jarvis-iOS:

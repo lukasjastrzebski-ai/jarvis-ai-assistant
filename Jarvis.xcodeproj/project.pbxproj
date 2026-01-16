@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C0AA3A1AF31D5CEB78A7E31 /* JarvisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B97CBC0FE178BE1B7CEFCAC /* JarvisApp.swift */; };
+		9A32734A19889D923F09B5D3 /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE83254539948670B35B97D /* iOSApp.swift */; };
+		A266E2DF0D7B5AFE97AF3E53 /* JarvisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B97CBC0FE178BE1B7CEFCAC /* JarvisApp.swift */; };
+		A9445B9BF4679C3DAC620BE0 /* AppLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A61F539678AA5B14458DC0 /* AppLaunchTests.swift */; };
+		DB915F584EE1BCAC366F552C /* macOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7954DAFA613016546BEBA6E /* macOSApp.swift */; };
+		DEEC1E88F7B2DA63FA7D030F /* AppLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8E21788592C47833CDE661 /* AppLaunchTests.swift */; };
+		F7EE163BB2101A31928F4CD0 /* JarvisShared in Frameworks */ = {isa = PBXBuildFile; productRef = 1D63E42C8EB4C1A6FB61513C /* JarvisShared */; };
+		FB6A30091AA608DF9F13B88C /* JarvisShared in Frameworks */ = {isa = PBXBuildFile; productRef = 1A2D4362FA10039F0B8F7B96 /* JarvisShared */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9AE6F48A73D552EC74CBF421 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33E99CF1F5349721FD0BB40B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E29C4BA1556EAE868E7DD248;
+			remoteInfo = "Jarvis-iOS";
+		};
+		B1FB0EFA04AC5F6F2BDC38E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33E99CF1F5349721FD0BB40B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 169B6614ACEBC7460F0148F2;
+			remoteInfo = "Jarvis-macOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2284143860821034CD1EE1DA /* Jarvis-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jarvis-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49A61F539678AA5B14458DC0 /* AppLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchTests.swift; sourceTree = "<group>"; };
+		7590ADED9BB5E111B0D6850C /* Jarvis-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "Jarvis-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		779819A8C2E0A98347539352 /* Jarvis-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jarvis-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B97CBC0FE178BE1B7CEFCAC /* JarvisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JarvisApp.swift; sourceTree = "<group>"; };
+		7D8E21788592C47833CDE661 /* AppLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchTests.swift; sourceTree = "<group>"; };
+		959F013CF3735AA6F3420143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A3998E39AC16EFBDDA0AE750 /* jarvis-ai-assistant */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "jarvis-ai-assistant"; path = .; sourceTree = SOURCE_ROOT; };
+		A7954DAFA613016546BEBA6E /* macOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOSApp.swift; sourceTree = "<group>"; };
+		BC324F683DB5657972FDD974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EDE83254539948670B35B97D /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
+		FF376125D7932182261CE771 /* Jarvis-iOSTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "Jarvis-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BB2D27A064D01D1E233452A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7EE163BB2101A31928F4CD0 /* JarvisShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3B86C23702FF3D80D403F47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB6A30091AA608DF9F13B88C /* JarvisShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E884BC81E2E500F5DFF43F4 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				959F013CF3735AA6F3420143 /* Info.plist */,
+				A7954DAFA613016546BEBA6E /* macOSApp.swift */,
+			);
+			name = macOS;
+			path = Jarvis/macOS;
+			sourceTree = "<group>";
+		};
+		461D8CB5FBAA4EB4F5348E2E /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				7D8E21788592C47833CDE661 /* AppLaunchTests.swift */,
+			);
+			name = macOS;
+			path = tests/macOS;
+			sourceTree = "<group>";
+		};
+		7370B301BC3824D8E135198C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7590ADED9BB5E111B0D6850C /* Jarvis-iOS.app */,
+				FF376125D7932182261CE771 /* Jarvis-iOSTests.xctest */,
+				2284143860821034CD1EE1DA /* Jarvis-macOS.app */,
+				779819A8C2E0A98347539352 /* Jarvis-macOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83D6FF1BD32DDB07605A03B9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				49A61F539678AA5B14458DC0 /* AppLaunchTests.swift */,
+			);
+			name = iOS;
+			path = tests/iOS;
+			sourceTree = "<group>";
+		};
+		BC0DCAC9B7584481D8C65021 = {
+			isa = PBXGroup;
+			children = (
+				C3E66A2C212E031F4D78457D /* iOS */,
+				83D6FF1BD32DDB07605A03B9 /* iOS */,
+				2E884BC81E2E500F5DFF43F4 /* macOS */,
+				461D8CB5FBAA4EB4F5348E2E /* macOS */,
+				EBFF6C47A440673BFB3E17FB /* Packages */,
+				FD904DF667D8BA6251A626DA /* Shared */,
+				7370B301BC3824D8E135198C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3E66A2C212E031F4D78457D /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				BC324F683DB5657972FDD974 /* Info.plist */,
+				EDE83254539948670B35B97D /* iOSApp.swift */,
+			);
+			name = iOS;
+			path = Jarvis/iOS;
+			sourceTree = "<group>";
+		};
+		EBFF6C47A440673BFB3E17FB /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				A3998E39AC16EFBDDA0AE750 /* jarvis-ai-assistant */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		FD904DF667D8BA6251A626DA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7B97CBC0FE178BE1B7CEFCAC /* JarvisApp.swift */,
+			);
+			name = Shared;
+			path = Jarvis/Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		169B6614ACEBC7460F0148F2 /* Jarvis-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91D0FFA60EBA410388434841 /* Build configuration list for PBXNativeTarget "Jarvis-macOS" */;
+			buildPhases = (
+				B3AB63B16DA78396DCC99C31 /* Sources */,
+				B3B86C23702FF3D80D403F47 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Jarvis-macOS";
+			packageProductDependencies = (
+				1A2D4362FA10039F0B8F7B96 /* JarvisShared */,
+			);
+			productName = "Jarvis-macOS";
+			productReference = 2284143860821034CD1EE1DA /* Jarvis-macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C1AD6C3C0AC75272F0B3F80 /* Jarvis-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3FEA9C5A79B89D890FD65A6 /* Build configuration list for PBXNativeTarget "Jarvis-iOSTests" */;
+			buildPhases = (
+				A89005845FE064ED16DCA321 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42A59F3D89BB608AFF8E5247 /* PBXTargetDependency */,
+			);
+			name = "Jarvis-iOSTests";
+			packageProductDependencies = (
+			);
+			productName = "Jarvis-iOSTests";
+			productReference = FF376125D7932182261CE771 /* Jarvis-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E29C4BA1556EAE868E7DD248 /* Jarvis-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0109CB6DD2029D84AAED657B /* Build configuration list for PBXNativeTarget "Jarvis-iOS" */;
+			buildPhases = (
+				73B784447690542F068DC004 /* Sources */,
+				5BB2D27A064D01D1E233452A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Jarvis-iOS";
+			packageProductDependencies = (
+				1D63E42C8EB4C1A6FB61513C /* JarvisShared */,
+			);
+			productName = "Jarvis-iOS";
+			productReference = 7590ADED9BB5E111B0D6850C /* Jarvis-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F1A7363AB892CA163C7DE9B3 /* Jarvis-macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49E869BA5882FE8DCDD525BA /* Build configuration list for PBXNativeTarget "Jarvis-macOSTests" */;
+			buildPhases = (
+				D39DBCBFAA36845A7C9FF42D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				338ABC247536970473AD5E2E /* PBXTargetDependency */,
+			);
+			name = "Jarvis-macOSTests";
+			packageProductDependencies = (
+			);
+			productName = "Jarvis-macOSTests";
+			productReference = 779819A8C2E0A98347539352 /* Jarvis-macOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		33E99CF1F5349721FD0BB40B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 5FF39917AC552CB1A0BD9FBA /* Build configuration list for PBXProject "Jarvis" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = BC0DCAC9B7584481D8C65021;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				15D3EB64CD824BDEF04C625F /* XCLocalSwiftPackageReference "." */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E29C4BA1556EAE868E7DD248 /* Jarvis-iOS */,
+				9C1AD6C3C0AC75272F0B3F80 /* Jarvis-iOSTests */,
+				169B6614ACEBC7460F0148F2 /* Jarvis-macOS */,
+				F1A7363AB892CA163C7DE9B3 /* Jarvis-macOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		73B784447690542F068DC004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C0AA3A1AF31D5CEB78A7E31 /* JarvisApp.swift in Sources */,
+				9A32734A19889D923F09B5D3 /* iOSApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A89005845FE064ED16DCA321 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9445B9BF4679C3DAC620BE0 /* AppLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3AB63B16DA78396DCC99C31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A266E2DF0D7B5AFE97AF3E53 /* JarvisApp.swift in Sources */,
+				DB915F584EE1BCAC366F552C /* macOSApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D39DBCBFAA36845A7C9FF42D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEEC1E88F7B2DA63FA7D030F /* AppLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		338ABC247536970473AD5E2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 169B6614ACEBC7460F0148F2 /* Jarvis-macOS */;
+			targetProxy = B1FB0EFA04AC5F6F2BDC38E2 /* PBXContainerItemProxy */;
+		};
+		42A59F3D89BB608AFF8E5247 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E29C4BA1556EAE868E7DD248 /* Jarvis-iOS */;
+			targetProxy = 9AE6F48A73D552EC74CBF421 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3DE67996626CAF112BD4E759 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = Jarvis/macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jarvis.macos;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		469CFEEAADC3CA9C756B66F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jarvis.ios.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jarvis-iOS.app/Jarvis-iOS";
+			};
+			name = Release;
+		};
+		51D3CEA86BFE7DCB6C7D574E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jarvis.ios.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jarvis-iOS.app/Jarvis-iOS";
+			};
+			name = Debug;
+		};
+		6E7A834C338CD4CBDBCAEE61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = Jarvis/macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jarvis.macos;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6EB0924CA3B209FCF6CE34E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = Jarvis/iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jarvis.ios;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7E92A9B7BFFC7D9664D7F92F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jarvis.macos.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jarvis-macOS.app/Contents/MacOS/Jarvis-macOS";
+			};
+			name = Release;
+		};
+		8A75D86FEE135E74011AB6D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		8D144B52D516EAF0D6FF105F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = Jarvis/iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jarvis.ios;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CA2EDC6435E5128E90920A00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		E368395817E9D8B0286B66A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jarvis.macos.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jarvis-macOS.app/Contents/MacOS/Jarvis-macOS";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0109CB6DD2029D84AAED657B /* Build configuration list for PBXNativeTarget "Jarvis-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EB0924CA3B209FCF6CE34E5 /* Debug */,
+				8D144B52D516EAF0D6FF105F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		49E869BA5882FE8DCDD525BA /* Build configuration list for PBXNativeTarget "Jarvis-macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E368395817E9D8B0286B66A2 /* Debug */,
+				7E92A9B7BFFC7D9664D7F92F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5FF39917AC552CB1A0BD9FBA /* Build configuration list for PBXProject "Jarvis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A75D86FEE135E74011AB6D2 /* Debug */,
+				CA2EDC6435E5128E90920A00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		91D0FFA60EBA410388434841 /* Build configuration list for PBXNativeTarget "Jarvis-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E7A834C338CD4CBDBCAEE61 /* Debug */,
+				3DE67996626CAF112BD4E759 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D3FEA9C5A79B89D890FD65A6 /* Build configuration list for PBXNativeTarget "Jarvis-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51D3CEA86BFE7DCB6C7D574E /* Debug */,
+				469CFEEAADC3CA9C756B66F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		15D3EB64CD824BDEF04C625F /* XCLocalSwiftPackageReference "." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = .;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A2D4362FA10039F0B8F7B96 /* JarvisShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = JarvisShared;
+		};
+		1D63E42C8EB4C1A6FB61513C /* JarvisShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = JarvisShared;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 33E99CF1F5349721FD0BB40B /* Project object */;
+}

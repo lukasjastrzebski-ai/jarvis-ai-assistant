@@ -1,0 +1,58 @@
+name: Pull Request
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  # Swift package tests (always run)
+  swift-tests:
+    name: Swift Tests
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode version
+        run: sudo xcode-select -s /Applications/Xcode_15.2.app
+
+      - name: Cache Swift packages
+        uses: actions/cache@v4
+        with:
+          path: .build
+          key: ${{ runner.os }}-spm-${{ hashFiles('Package.swift') }}
+
+      - name: Build and test
+        run: swift test
+
+  # Backend tests (always run)
+  backend-tests:
+    name: Backend Tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install and test
+        run: |
+          npm ci
+          npm run typecheck
+          npm test
+
+  # PR Status check
+  pr-check:
+    name: PR Ready
+    needs: [swift-tests, backend-tests]
+    runs-on: ubuntu-latest
+    steps:
+      - name: All checks passed
+        run: echo "All CI checks passed!"

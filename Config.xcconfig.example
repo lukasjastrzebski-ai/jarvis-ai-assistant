@@ -1,0 +1,60 @@
+// Jarvis iOS App Configuration
+// Copy to Config.xcconfig and fill in your values
+// Add Config.xcconfig to .gitignore
+//
+// To use: In Xcode, set this as the configuration file for your target
+// Or reference values in Info.plist using $(VARIABLE_NAME)
+
+// ============================================
+// APP IDENTITY
+// ============================================
+
+APP_BUNDLE_ID = com.yourcompany.jarvis
+APP_NAME = Jarvis
+APP_VERSION = 1.0.0
+APP_BUILD = 1
+
+// ============================================
+// DEVELOPMENT TEAM
+// ============================================
+
+DEVELOPMENT_TEAM = YOUR_TEAM_ID
+
+// ============================================
+// API ENDPOINTS
+// ============================================
+
+// Local development
+// API_BASE_URL = http:\/\/localhost:8787
+
+// Staging
+// API_BASE_URL = https:\/\/jarvis-api-staging.yourcompany.workers.dev
+
+// Production
+API_BASE_URL = https:\/\/jarvis-api.yourcompany.workers.dev
+
+// ============================================
+// GOOGLE OAUTH
+// ============================================
+
+GOOGLE_CLIENT_ID = your-client-id.apps.googleusercontent.com
+GOOGLE_REVERSED_CLIENT_ID = com.googleusercontent.apps.your-client-id
+
+// ============================================
+// FEATURE FLAGS
+// ============================================
+
+FEATURE_VOICE_ENABLED = YES
+FEATURE_GMAIL_SYNC = YES
+FEATURE_CALENDAR_SYNC = YES
+FEATURE_AI_DRAFTING = YES
+
+// ============================================
+// DEBUG SETTINGS
+// ============================================
+
+// Enable verbose logging in debug builds
+DEBUG_LOGGING = YES
+
+// Mock external services for testing
+USE_MOCK_SERVICES = NO

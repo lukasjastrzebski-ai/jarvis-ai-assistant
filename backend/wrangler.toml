@@ -1,0 +1,21 @@
+name = "jarvis-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+[dev]
+port = 8787
+local_protocol = "http"
+
+# Environment variables (use wrangler secret for sensitive values)
+[vars]
+ENVIRONMENT = "development"
+API_VERSION = "0.1.0"
+
+# Production environment
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
+# Staging environment
+[env.staging]
+vars = { ENVIRONMENT = "staging" }

@@ -1,0 +1,578 @@
+{
+  "version": "20.0",
+  "phase": "ALL",
+  "generated_at": "2026-01-15T17:02:49.110121Z",
+  "tasks": {
+    "TASK-012": {
+      "task_id": "TASK-012",
+      "title": "TASK-012",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-012.md",
+      "phase": "PHASE-02",
+      "dependencies": [
+        "TASK-008"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-002": {
+      "task_id": "TASK-002",
+      "title": "TASK-002: SwiftUI App Scaffold",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-002.md",
+      "phase": "PHASE-01",
+      "dependencies": [
+        "TASK-001"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-022": {
+      "task_id": "TASK-022",
+      "title": "TASK-022",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-022.md",
+      "phase": "PHASE-04",
+      "dependencies": [
+        "TASK-021"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-016": {
+      "task_id": "TASK-016",
+      "title": "TASK-016",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-016.md",
+      "phase": "PHASE-03",
+      "dependencies": [
+        "TASK-010"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-006": {
+      "task_id": "TASK-006",
+      "title": "TASK-006",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-006.md",
+      "phase": "PHASE-01",
+      "dependencies": [
+        "TASK-001"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-023": {
+      "task_id": "TASK-023",
+      "title": "TASK-023",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-023.md",
+      "phase": "PHASE-04",
+      "dependencies": [
+        "TASK-022"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-017": {
+      "task_id": "TASK-017",
+      "title": "TASK-017",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-017.md",
+      "phase": "PHASE-03",
+      "dependencies": [
+        "TASK-013",
+        "TASK-016"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-007": {
+      "task_id": "TASK-007",
+      "title": "TASK-007",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-007.md",
+      "phase": "PHASE-02",
+      "dependencies": [],
+      "phase_deps": [
+        "PHASE-01"
+      ],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-013": {
+      "task_id": "TASK-013",
+      "title": "TASK-013",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-013.md",
+      "phase": "PHASE-03",
+      "dependencies": [
+        "TASK-010"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-003": {
+      "task_id": "TASK-003",
+      "title": "TASK-003",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-003.md",
+      "phase": "PHASE-01",
+      "dependencies": [
+        "TASK-001"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-018": {
+      "task_id": "TASK-018",
+      "title": "TASK-018",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-018.md",
+      "phase": "PHASE-03",
+      "dependencies": [
+        "TASK-003"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-008": {
+      "task_id": "TASK-008",
+      "title": "TASK-008",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-008.md",
+      "phase": "PHASE-02",
+      "dependencies": [
+        "TASK-007"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-019": {
+      "task_id": "TASK-019",
+      "title": "TASK-019",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-019.md",
+      "phase": "PHASE-03",
+      "dependencies": [
+        "TASK-012"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-009": {
+      "task_id": "TASK-009",
+      "title": "TASK-009",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-009.md",
+      "phase": "PHASE-02",
+      "dependencies": [
+        "TASK-003"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-020": {
+      "task_id": "TASK-020",
+      "title": "TASK-020",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-020.md",
+      "phase": "PHASE-03",
+      "dependencies": [
+        "TASK-011"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-014": {
+      "task_id": "TASK-014",
+      "title": "TASK-014",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-014.md",
+      "phase": "PHASE-03",
+      "dependencies": [
+        "TASK-002"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-004": {
+      "task_id": "TASK-004",
+      "title": "TASK-004",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-004.md",
+      "phase": "PHASE-01",
+      "dependencies": [
+        "TASK-003"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-010": {
+      "task_id": "TASK-010",
+      "title": "TASK-010",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-010.md",
+      "phase": "PHASE-02",
+      "dependencies": [
+        "TASK-008",
+        "TASK-009"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-024": {
+      "task_id": "TASK-024",
+      "title": "TASK-024",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-024.md",
+      "phase": "PHASE-04",
+      "dependencies": [
+        "TASK-023"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-011": {
+      "task_id": "TASK-011",
+      "title": "TASK-011",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-011.md",
+      "phase": "PHASE-02",
+      "dependencies": [
+        "TASK-008"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-001": {
+      "task_id": "TASK-001",
+      "title": "TASK-001: Project Setup",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-001.md",
+      "phase": "PHASE-01",
+      "dependencies": [],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-021": {
+      "task_id": "TASK-021",
+      "title": "TASK-021",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-021.md",
+      "phase": "PHASE-04",
+      "dependencies": [],
+      "phase_deps": [
+        "PHASE-03"
+      ],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-015": {
+      "task_id": "TASK-015",
+      "title": "TASK-015",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-015.md",
+      "phase": "PHASE-03",
+      "dependencies": [
+        "TASK-010"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    },
+    "TASK-005": {
+      "task_id": "TASK-005",
+      "title": "TASK-005",
+      "file_path": "/Users/lukasjastrzebski/VS Code Claude Code Repo/jarvis-ai-assistant/plan/TASK-005.md",
+      "phase": "PHASE-01",
+      "dependencies": [
+        "TASK-003"
+      ],
+      "phase_deps": [],
+      "files_modified": [],
+      "test_delta": {
+        "add": [],
+        "update": [],
+        "regression": []
+      },
+      "priority": 5,
+      "complexity": "MEDIUM"
+    }
+  },
+  "parallel_groups": [
+    {
+      "group_id": "GROUP-001",
+      "tasks": [
+        "TASK-001"
+      ],
+      "barrier_after": true,
+      "estimated_agents": 1
+    },
+    {
+      "group_id": "GROUP-002",
+      "tasks": [
+        "TASK-002",
+        "TASK-003",
+        "TASK-006"
+      ],
+      "barrier_after": true,
+      "estimated_agents": 3
+    },
+    {
+      "group_id": "GROUP-003",
+      "tasks": [
+        "TASK-004",
+        "TASK-005",
+        "TASK-009",
+        "TASK-014",
+        "TASK-018"
+      ],
+      "barrier_after": true,
+      "estimated_agents": 5
+    },
+    {
+      "group_id": "GROUP-004",
+      "tasks": [
+        "TASK-007"
+      ],
+      "barrier_after": true,
+      "estimated_agents": 1
+    },
+    {
+      "group_id": "GROUP-005",
+      "tasks": [
+        "TASK-008"
+      ],
+      "barrier_after": true,
+      "estimated_agents": 1
+    },
+    {
+      "group_id": "GROUP-006",
+      "tasks": [
+        "TASK-010",
+        "TASK-011",
+        "TASK-012"
+      ],
+      "barrier_after": true,
+      "estimated_agents": 3
+    },
+    {
+      "group_id": "GROUP-007",
+      "tasks": [
+        "TASK-013",
+        "TASK-015",
+        "TASK-016",
+        "TASK-019",
+        "TASK-020"
+      ],
+      "barrier_after": true,
+      "estimated_agents": 5
+    },
+    {
+      "group_id": "GROUP-008",
+      "tasks": [
+        "TASK-017"
+      ],
+      "barrier_after": true,
+      "estimated_agents": 1
+    },
+    {
+      "group_id": "GROUP-009",
+      "tasks": [
+        "TASK-021"
+      ],
+      "barrier_after": true,
+      "estimated_agents": 1
+    },
+    {
+      "group_id": "GROUP-010",
+      "tasks": [
+        "TASK-022"
+      ],
+      "barrier_after": true,
+      "estimated_agents": 1
+    },
+    {
+      "group_id": "GROUP-011",
+      "tasks": [
+        "TASK-023"
+      ],
+      "barrier_after": true,
+      "estimated_agents": 1
+    },
+    {
+      "group_id": "GROUP-012",
+      "tasks": [
+        "TASK-024"
+      ],
+      "barrier_after": true,
+      "estimated_agents": 1
+    }
+  ],
+  "execution_order": [
+    "TASK-001",
+    "TASK-002",
+    "TASK-003",
+    "TASK-004",
+    "TASK-005",
+    "TASK-006",
+    "TASK-007",
+    "TASK-008",
+    "TASK-009",
+    "TASK-010",
+    "TASK-011",
+    "TASK-012",
+    "TASK-013",
+    "TASK-014",
+    "TASK-015",
+    "TASK-016",
+    "TASK-017",
+    "TASK-018",
+    "TASK-019",
+    "TASK-020",
+    "TASK-021",
+    "TASK-022",
+    "TASK-023",
+    "TASK-024"
+  ],
+  "total_tasks": 24,
+  "parallelizable_tasks": 16,
+  "sequential_tasks": 8
+}

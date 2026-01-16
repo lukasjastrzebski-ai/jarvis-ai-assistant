@@ -1,0 +1,107 @@
+name: Swift CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'Package.swift'
+      - 'project.yml'
+      - 'Jarvis/**'
+      - '.github/workflows/swift.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'Package.swift'
+      - 'project.yml'
+      - 'Jarvis/**'
+      - '.github/workflows/swift.yml'
+
+jobs:
+  test-spm:
+    name: Swift Package Tests
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode version
+        run: sudo xcode-select -s /Applications/Xcode_15.2.app
+
+      - name: Cache Swift packages
+        uses: actions/cache@v4
+        with:
+          path: .build
+          key: ${{ runner.os }}-spm-${{ hashFiles('Package.swift') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
+
+      - name: Build Swift package
+        run: swift build
+
+      - name: Run Swift package tests
+        run: swift test
+
+  build-apps:
+    name: Build iOS & macOS Apps
+    runs-on: macos-14
+    needs: test-spm
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode version
+        run: sudo xcode-select -s /Applications/Xcode_15.2.app
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Build iOS app
+        run: |
+          xcodebuild build \
+            -project Jarvis.xcodeproj \
+            -scheme Jarvis-iOS \
+            -destination 'platform=iOS Simulator,name=iPhone 15' \
+            -configuration Debug
+
+      - name: Build macOS app
+        run: |
+          xcodebuild build \
+            -project Jarvis.xcodeproj \
+            -scheme Jarvis-macOS \
+            -configuration Debug
+
+  test-apps:
+    name: Test iOS & macOS Apps
+    runs-on: macos-14
+    needs: build-apps
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode version
+        run: sudo xcode-select -s /Applications/Xcode_15.2.app
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Test macOS app
+        run: |
+          xcodebuild test \
+            -project Jarvis.xcodeproj \
+            -scheme Jarvis-macOS \
+            -configuration Debug
+
+      - name: Test iOS app
+        run: |
+          xcodebuild test \
+            -project Jarvis.xcodeproj \
+            -scheme Jarvis-iOS \
+            -destination 'platform=iOS Simulator,name=iPhone 15' \
+            -configuration Debug
