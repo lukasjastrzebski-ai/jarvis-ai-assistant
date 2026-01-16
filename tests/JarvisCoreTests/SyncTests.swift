@@ -292,14 +292,12 @@ final class SyncTests: XCTestCase {
 
     func testSyncManagerObserver() async {
         let manager = SyncManager()
-        var observedStates: [SyncState] = []
 
-        let observerId = await manager.observe { state in
-            observedStates.append(state)
+        let observerId = await manager.observe { _ in
+            // Observer registered - state changes would be received here
         }
 
-        // Trigger some state changes (this would happen during sync)
-        // For now, just verify observer was registered
+        // Verify observer was registered
         XCTAssertNotNil(observerId)
 
         await manager.removeObserver(observerId)
