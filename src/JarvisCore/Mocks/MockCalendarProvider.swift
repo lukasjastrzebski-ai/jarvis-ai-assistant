@@ -6,7 +6,7 @@ public actor MockCalendarProvider {
     private var mockEvents: [String: [CalendarEvent]] = [:]
 
     public init() {
-        // Initialize data inline to avoid actor isolation warning
+        // Initialize calendars
         let workCalendar = JarvisCore.Calendar(
             id: "work-calendar",
             name: "Work",
@@ -24,77 +24,11 @@ public actor MockCalendarProvider {
 
         mockCalendars = [workCalendar, personalCalendar]
 
-        let calendar = Foundation.Calendar.current
-        let today = Date()
+        // Use SampleDataGenerator for rich, realistic calendar data
+        let allEvents = SampleDataGenerator.shared.generateSampleEvents()
 
-        let todayEvents: [CalendarEvent] = [
-            CalendarEvent(
-                id: "event-1",
-                calendarId: "work-calendar",
-                title: "Team Standup",
-                description: "Daily sync with the team",
-                location: "Zoom",
-                startDate: calendar.date(bySettingHour: 9, minute: 30, second: 0, of: today)!,
-                endDate: calendar.date(bySettingHour: 10, minute: 0, second: 0, of: today)!,
-                conferenceLink: "https://zoom.us/j/123456"
-            ),
-            CalendarEvent(
-                id: "event-2",
-                calendarId: "work-calendar",
-                title: "Product Review",
-                description: "Review Q4 roadmap",
-                location: "Conference Room A",
-                startDate: calendar.date(bySettingHour: 14, minute: 0, second: 0, of: today)!,
-                endDate: calendar.date(bySettingHour: 15, minute: 0, second: 0, of: today)!,
-                attendees: [
-                    EventAttendee(email: "pm@company.com", name: "Product Manager", status: .accepted),
-                    EventAttendee(email: "eng@company.com", name: "Engineer", status: .tentative)
-                ]
-            ),
-            CalendarEvent(
-                id: "event-3",
-                calendarId: "personal-calendar",
-                title: "Gym",
-                location: "Local Fitness",
-                startDate: calendar.date(bySettingHour: 18, minute: 0, second: 0, of: today)!,
-                endDate: calendar.date(bySettingHour: 19, minute: 0, second: 0, of: today)!
-            )
-        ]
-
-        let tomorrow = calendar.date(byAdding: .day, value: 1, to: today)!
-        let tomorrowEvents: [CalendarEvent] = [
-            CalendarEvent(
-                id: "event-4",
-                calendarId: "work-calendar",
-                title: "1:1 with Manager",
-                startDate: calendar.date(bySettingHour: 11, minute: 0, second: 0, of: tomorrow)!,
-                endDate: calendar.date(bySettingHour: 11, minute: 30, second: 0, of: tomorrow)!
-            ),
-            CalendarEvent(
-                id: "event-5",
-                calendarId: "personal-calendar",
-                title: "Dentist Appointment",
-                location: "Downtown Dental",
-                startDate: calendar.date(bySettingHour: 14, minute: 0, second: 0, of: tomorrow)!,
-                endDate: calendar.date(bySettingHour: 15, minute: 0, second: 0, of: tomorrow)!
-            )
-        ]
-
-        let nextWeek = calendar.date(byAdding: .day, value: 7, to: today)!
-        let weeklyEvent = CalendarEvent(
-            id: "event-6",
-            calendarId: "work-calendar",
-            title: "Weekly Planning",
-            startDate: calendar.date(bySettingHour: 10, minute: 0, second: 0, of: nextWeek)!,
-            endDate: calendar.date(bySettingHour: 11, minute: 0, second: 0, of: nextWeek)!,
-            recurrence: EventRecurrence(frequency: .weekly, interval: 1)
-        )
-
-        mockEvents["work-calendar"] = todayEvents.filter { $0.calendarId == "work-calendar" } +
-                                       tomorrowEvents.filter { $0.calendarId == "work-calendar" } +
-                                       [weeklyEvent]
-        mockEvents["personal-calendar"] = todayEvents.filter { $0.calendarId == "personal-calendar" } +
-                                          tomorrowEvents.filter { $0.calendarId == "personal-calendar" }
+        mockEvents["work-calendar"] = allEvents.filter { $0.calendarId == "work-calendar" }
+        mockEvents["personal-calendar"] = allEvents.filter { $0.calendarId == "personal-calendar" }
     }
 
     private func seedTestData() {
