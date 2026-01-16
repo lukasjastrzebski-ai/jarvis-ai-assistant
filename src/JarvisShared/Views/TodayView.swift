@@ -9,9 +9,9 @@ public struct TodayView: View {
 
     public var body: some View {
         NavigationStack {
-            List {
-                // Morning Briefing Section
-                Section {
+            ScrollView {
+                LazyVStack(alignment: .leading, spacing: 16) {
+                    // Morning Briefing Section
                     HStack {
                         VStack(alignment: .leading, spacing: 4) {
                             Text(viewModel.greeting)
@@ -26,105 +26,150 @@ public struct TodayView: View {
                             .font(.largeTitle)
                             .foregroundStyle(.yellow)
                     }
-                    .padding(.vertical, 8)
-                }
+                    .padding()
+                    .background(Color.secondary.opacity(0.1))
+                    .cornerRadius(12)
+                    .padding(.horizontal)
 
-                // Today's Schedule
-                Section("Today's Schedule") {
-                    if viewModel.todaysEvents.isEmpty {
-                        Text("No events today")
+                    // Today's Schedule
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Today's Schedule")
+                            .font(.headline)
                             .foregroundStyle(.secondary)
-                    } else {
-                        ForEach(viewModel.todaysEvents, id: \.id) { event in
-                            HStack {
-                                RoundedRectangle(cornerRadius: 2)
-                                    .fill(event.calendarId == "work-calendar" ? Color.blue : Color.green)
-                                    .frame(width: 4)
+                            .padding(.horizontal)
 
+                        if viewModel.todaysEvents.isEmpty {
+                            Text("No events today")
+                                .foregroundStyle(.secondary)
+                                .padding()
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(Color.secondary.opacity(0.1))
+                                .cornerRadius(8)
+                                .padding(.horizontal)
+                        } else {
+                            ForEach(viewModel.todaysEvents, id: \.id) { event in
+                                HStack {
+                                    RoundedRectangle(cornerRadius: 2)
+                                        .fill(event.calendarId == "work-calendar" ? Color.blue : Color.green)
+                                        .frame(width: 4)
+
+                                    VStack(alignment: .leading, spacing: 4) {
+                                        Text(event.title)
+                                            .font(.headline)
+                                        HStack {
+                                            Text(viewModel.formatTime(event.startDate))
+                                                .font(.caption)
+                                                .foregroundStyle(.secondary)
+                                            if let location = event.location {
+                                                Text("• \(location)")
+                                                    .font(.caption)
+                                                    .foregroundStyle(.secondary)
+                                                    .lineLimit(1)
+                                            }
+                                        }
+                                    }
+
+                                    Spacer()
+
+                                    if event.conferenceLink != nil {
+                                        Image(systemName: "video.fill")
+                                            .foregroundStyle(.blue)
+                                    }
+                                }
+                                .padding()
+                                .background(Color.secondary.opacity(0.1))
+                                .cornerRadius(8)
+                                .padding(.horizontal)
+                            }
+                        }
+                    }
+
+                    // Unread Emails
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Unread Emails (\(viewModel.unreadEmails.count))")
+                            .font(.headline)
+                            .foregroundStyle(.secondary)
+                            .padding(.horizontal)
+
+                        if viewModel.unreadEmails.isEmpty {
+                            Text("No unread emails")
+                                .foregroundStyle(.secondary)
+                                .padding()
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(Color.secondary.opacity(0.1))
+                                .cornerRadius(8)
+                                .padding(.horizontal)
+                        } else {
+                            ForEach(viewModel.unreadEmails.prefix(5), id: \.id) { email in
                                 VStack(alignment: .leading, spacing: 4) {
-                                    Text(event.title)
-                                        .font(.headline)
                                     HStack {
-                                        Text(viewModel.formatTime(event.startDate))
+                                        Text(email.from)
+                                            .font(.subheadline)
+                                            .fontWeight(.semibold)
+                                        Spacer()
+                                        Text(viewModel.formatRelativeTime(email.date))
                                             .font(.caption)
                                             .foregroundStyle(.secondary)
-                                        if let location = event.location {
-                                            Text("• \(location)")
+                                    }
+                                    Text(email.subject)
+                                        .font(.subheadline)
+                                        .foregroundStyle(.secondary)
+                                        .lineLimit(1)
+                                }
+                                .padding()
+                                .background(Color.secondary.opacity(0.1))
+                                .cornerRadius(8)
+                                .padding(.horizontal)
+                            }
+                        }
+                    }
+
+                    // Tasks for Today
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Tasks")
+                            .font(.headline)
+                            .foregroundStyle(.secondary)
+                            .padding(.horizontal)
+
+                        if viewModel.todaysTasks.isEmpty {
+                            Text("No tasks for today")
+                                .foregroundStyle(.secondary)
+                                .padding()
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(Color.secondary.opacity(0.1))
+                                .cornerRadius(8)
+                                .padding(.horizontal)
+                        } else {
+                            ForEach(viewModel.todaysTasks, id: \.id) { task in
+                                HStack {
+                                    Image(systemName: "circle")
+                                        .foregroundStyle(priorityColor(task.priority))
+                                    VStack(alignment: .leading) {
+                                        Text(task.title)
+                                            .font(.subheadline)
+                                        if let content = task.content {
+                                            Text(content)
                                                 .font(.caption)
                                                 .foregroundStyle(.secondary)
                                                 .lineLimit(1)
                                         }
                                     }
-                                }
-
-                                Spacer()
-
-                                if event.conferenceLink != nil {
-                                    Image(systemName: "video.fill")
-                                        .foregroundStyle(.blue)
-                                }
-                            }
-                            .padding(.vertical, 4)
-                        }
-                    }
-                }
-
-                // Unread Emails
-                Section("Unread Emails (\(viewModel.unreadEmails.count))") {
-                    if viewModel.unreadEmails.isEmpty {
-                        Text("No unread emails")
-                            .foregroundStyle(.secondary)
-                    } else {
-                        ForEach(viewModel.unreadEmails.prefix(5), id: \.id) { email in
-                            VStack(alignment: .leading, spacing: 4) {
-                                HStack {
-                                    Text(email.from)
-                                        .font(.subheadline)
-                                        .fontWeight(.semibold)
                                     Spacer()
-                                    Text(viewModel.formatRelativeTime(email.date))
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
-                                }
-                                Text(email.subject)
-                                    .font(.subheadline)
-                                    .foregroundStyle(.secondary)
-                                    .lineLimit(1)
-                            }
-                            .padding(.vertical, 2)
-                        }
-                    }
-                }
-
-                // Tasks for Today
-                Section("Tasks") {
-                    if viewModel.todaysTasks.isEmpty {
-                        Text("No tasks for today")
-                            .foregroundStyle(.secondary)
-                    } else {
-                        ForEach(viewModel.todaysTasks, id: \.id) { task in
-                            HStack {
-                                Image(systemName: "circle")
-                                    .foregroundStyle(priorityColor(task.priority))
-                                VStack(alignment: .leading) {
-                                    Text(task.title)
-                                        .font(.subheadline)
-                                    if let content = task.content {
-                                        Text(content)
-                                            .font(.caption)
-                                            .foregroundStyle(.secondary)
-                                            .lineLimit(1)
+                                    if task.priority == .urgent || task.priority == .high {
+                                        Image(systemName: "exclamationmark.circle.fill")
+                                            .foregroundStyle(.red)
                                     }
                                 }
-                                Spacer()
-                                if task.priority == .urgent || task.priority == .high {
-                                    Image(systemName: "exclamationmark.circle.fill")
-                                        .foregroundStyle(.red)
-                                }
+                                .padding()
+                                .background(Color.secondary.opacity(0.1))
+                                .cornerRadius(8)
+                                .padding(.horizontal)
                             }
                         }
                     }
+                    .padding(.bottom, 20)
                 }
+                .padding(.top)
             }
             .navigationTitle("Today")
             .refreshable {

@@ -10,75 +10,112 @@ public struct CalendarView: View {
 
     public var body: some View {
         NavigationStack {
-            List {
-                // Calendar picker
-                Section {
+            ScrollView {
+                VStack(spacing: 0) {
+                    // Calendar picker at top (outside List to avoid scroll conflicts)
                     DatePicker(
                         "Select Date",
                         selection: $selectedDate,
                         displayedComponents: .date
                     )
                     .datePickerStyle(.graphical)
+                    .padding()
+                    .background(Color.clear)
                     .onChange(of: selectedDate) { _, newValue in
                         Task {
                             await viewModel.loadEvents(for: newValue)
                         }
                     }
-                }
 
-                // Connected Calendars
-                Section("Calendars") {
-                    ForEach(viewModel.calendars, id: \.id) { calendar in
-                        HStack {
-                            Circle()
-                                .fill(Color(hex: calendar.color) ?? .blue)
-                                .frame(width: 12, height: 12)
-                            Text(calendar.name)
-                            Spacer()
-                            Text(calendar.accountType.rawValue)
-                                .font(.caption)
+                    Divider()
+
+                    // Rest of content in a LazyVStack for performance
+                    LazyVStack(alignment: .leading, spacing: 16) {
+                        // Connected Calendars
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Calendars")
+                                .font(.headline)
                                 .foregroundStyle(.secondary)
-                        }
-                    }
-                }
+                                .padding(.horizontal)
 
-                // Events for selected date
-                Section("Events for \(viewModel.formatDate(selectedDate))") {
-                    if viewModel.eventsForDate.isEmpty {
-                        Text("No events")
-                            .foregroundStyle(.secondary)
-                    } else {
-                        ForEach(viewModel.eventsForDate, id: \.id) { event in
-                            EventRow(event: event, formatTime: viewModel.formatTime)
-                        }
-                    }
-                }
-
-                // Upcoming Events
-                Section("Upcoming") {
-                    if viewModel.upcomingEvents.isEmpty {
-                        Text("No upcoming events")
-                            .foregroundStyle(.secondary)
-                    } else {
-                        ForEach(viewModel.upcomingEvents, id: \.id) { event in
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(event.title)
-                                    .font(.subheadline)
-                                    .fontWeight(.medium)
+                            ForEach(viewModel.calendars, id: \.id) { calendar in
                                 HStack {
-                                    Text(viewModel.formatDateTime(event.startDate))
+                                    Circle()
+                                        .fill(Color(hex: calendar.color) ?? .blue)
+                                        .frame(width: 12, height: 12)
+                                    Text(calendar.name)
+                                    Spacer()
+                                    Text(calendar.accountType.rawValue)
                                         .font(.caption)
                                         .foregroundStyle(.secondary)
-                                    if let location = event.location {
-                                        Text("• \(location)")
-                                            .font(.caption)
-                                            .foregroundStyle(.secondary)
-                                            .lineLimit(1)
-                                    }
+                                }
+                                .padding(.horizontal)
+                                .padding(.vertical, 8)
+                                .background(Color.secondary.opacity(0.1))
+                            }
+                        }
+                        .padding(.top)
+
+                        // Events for selected date
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Events for \(viewModel.formatDate(selectedDate))")
+                                .font(.headline)
+                                .foregroundStyle(.secondary)
+                                .padding(.horizontal)
+
+                            if viewModel.eventsForDate.isEmpty {
+                                Text("No events")
+                                    .foregroundStyle(.secondary)
+                                    .padding(.horizontal)
+                                    .padding(.vertical, 12)
+                            } else {
+                                ForEach(viewModel.eventsForDate, id: \.id) { event in
+                                    EventRow(event: event, formatTime: viewModel.formatTime)
+                                        .padding(.horizontal)
+                                        .padding(.vertical, 8)
+                                        .background(Color.secondary.opacity(0.1))
                                 }
                             }
-                            .padding(.vertical, 2)
                         }
+
+                        // Upcoming Events
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Upcoming")
+                                .font(.headline)
+                                .foregroundStyle(.secondary)
+                                .padding(.horizontal)
+
+                            if viewModel.upcomingEvents.isEmpty {
+                                Text("No upcoming events")
+                                    .foregroundStyle(.secondary)
+                                    .padding(.horizontal)
+                                    .padding(.vertical, 12)
+                            } else {
+                                ForEach(viewModel.upcomingEvents, id: \.id) { event in
+                                    VStack(alignment: .leading, spacing: 4) {
+                                        Text(event.title)
+                                            .font(.subheadline)
+                                            .fontWeight(.medium)
+                                        HStack {
+                                            Text(viewModel.formatDateTime(event.startDate))
+                                                .font(.caption)
+                                                .foregroundStyle(.secondary)
+                                            if let location = event.location {
+                                                Text("• \(location)")
+                                                    .font(.caption)
+                                                    .foregroundStyle(.secondary)
+                                                    .lineLimit(1)
+                                            }
+                                        }
+                                    }
+                                    .padding(.horizontal)
+                                    .padding(.vertical, 8)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .background(Color.secondary.opacity(0.1))
+                                }
+                            }
+                        }
+                        .padding(.bottom, 20)
                     }
                 }
             }
