@@ -121,8 +121,9 @@ syncRoutes.post('/push', async (c) => {
       }
     }
     if (body.deletedIds.memories) {
-      for (const id of body.deletedIds.memories) {
+      for (const _id of body.deletedIds.memories) {
         // Soft delete for memories would need implementation
+        // Using _id prefix to indicate intentionally unused
       }
     }
   }

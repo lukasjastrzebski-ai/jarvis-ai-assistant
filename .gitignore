@@ -42,7 +42,7 @@ backend/.env
 
 # iOS Secrets and Config (use .example files as templates)
 Config.xcconfig
-src/JarvisCore/Config/Secrets.swift
+# Note: Secrets.swift is committed with CI-safe defaults (uses env vars)
 
 # Apple auth keys
 AuthKey_*.p8
